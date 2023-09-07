@@ -4,11 +4,15 @@
   - to demonstrate to implement polymorphic props(like components, tags)
 - In simple javascript version(.jsx)
   ```javascript App.jsx
-  <Button As="a" href="/" className="link">
-    Link
-  </Button>
+  // App.jsx
+   <Button>Medium</Button>
+   <Button size="lg">Large</Button>
+   <Button As="a" href="/" className="link">
+      Link
+   </Button>
   ```
-  ```javascript Button.jsx
+  ```javascript
+  // Button.jsx component
   // No need of Generic BS
   export function Button({
     As = "button",
@@ -17,7 +21,7 @@
     ...btnProps
   }) {
     return (
-      <Component
+      <As
         {...btnProps}
         className={`${styles.button} ${styles[size]} ${className}`}
       />
